@@ -36,7 +36,7 @@ app.use(express.json());
 app.use(fileupload());
 app.use(express.urlencoded({ extended: false }));
 app.use(cors({ 
-  origin: "http://localhost:3000", 
+  origin: "http://3.111.87.2:3000", 
   methods: ["GET", "POST", "PUT", "DELETE", "PATCH"],
   exposedHeaders: ['Content-Length', 'Content-Disposition'],
   maxAge: 86400
