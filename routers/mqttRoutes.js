@@ -174,7 +174,7 @@ router.post("/subscribe", (req, res) => {
 
 router.post("/create-tagname", async (req, res) => {
   try {
-    const { topic, label } = req.body;
+    const { topic,device, label } = req.body;
     const cacheKey = `${CACHE_PREFIX}topic-exists:${topic}`;
     const cachedExists = await safeRedisGet(cacheKey);
 
@@ -194,7 +194,7 @@ router.post("/create-tagname", async (req, res) => {
       });
     }
 
-    await TopicsModel.create({ topic, label });
+    await TopicsModel.create({ topic, device, label });
     await safeRedisSet(cacheKey, "true", TTL_LONG);
     
     await Promise.all([
