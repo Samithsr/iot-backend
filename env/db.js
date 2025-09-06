@@ -7,7 +7,7 @@ const mongoose = require("mongoose");
 // "mongodb+srv://samithrgowda:7zsJuGajQ7ONZicL@srdbcluster.b8lex.mongodb.net/SRDB2?retryWrites=true&w=majority&appName=SRDBCLUSTER"
 const connectDB = () => {
   mongoose
-    .connect("mongodb://3.111.87.2:27017/sarayu-test-project-ec2")
+    .connect("mongodb://65.0.55.1:27017/sarayu-test-project-ec2")
     .then(() => {
       console.log("Database connection successfull!");
     })
