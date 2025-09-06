@@ -36,7 +36,7 @@ const logger = winston.createLogger({
   ]
 });
 
-const DB_URI = process.env.MONGODB_URI || 'mongodb://13.127.36.85:27017';
+const DB_URI = process.env.MONGODB_URI || 'mongodb://65.0.55.1:27017';
 const DB_NAME = process.env.DB_NAME || 'sarayu-test-project-ec2';
 
 router.get('/size', async (req, res) => {
