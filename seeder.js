@@ -15,9 +15,9 @@ dotenv.config({ path: "./env/config.env" });
 const user_data = JSON.parse(
   fs.readFileSync("./data/admin-data.json", "utf-8")
 );
-// const topics_data = JSON.parse(
-//   fs.readFileSync("./data/topics-data.json", "utf-8")
-// );
+const topics_data = JSON.parse(
+  fs.readFileSync("./data/topics-data.json", "utf-8")
+);
 
 connectDB();
 
@@ -26,7 +26,7 @@ const insertData = async () => {
     // await User.create(user_data);
     // await SupportMail.create(support_data);
     await Admin.create(user_data);
-    // await MqttMessage.create(topics_data)
+    await MqttMessage.create(topics_data)
     console.log("Data insertion successful!");
   } catch (error) {
     console.error("Error inserting data:", error.message);
